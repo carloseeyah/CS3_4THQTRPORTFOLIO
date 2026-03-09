@@ -1,0 +1,126 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="2nd Graded Exercise">
+    <meta name="author" content="CM Sia">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="4Q1stGraded.js" defer></script>
+    <title>4Q 1st Graded Exercise</title>
+    <title>Movie Rating</title>
+
+    <style>
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #f9f9f9;
+        margin: 20px;
+    }
+
+    h2 {
+        color: #0074cc;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: auto;
+        margin-top: 10%;
+    }
+
+    input[type="text"], input[type="number"], select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button.star {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+    }
+
+    .star-icon {
+        color: #ccc;
+    }
+
+    button[type="submit"] {
+        background-color: #0074cc;
+        color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .checked {
+        transition: all 0.3s ease;
+        color: orange;
+    }   
+
+    dt {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px 20px;
+        margin: auto;
+        margin-bottom: 2px;
+        width: 90%;
+    }
+    </style>
+
+</head>
+
+<body>
+<form id="movieRatingForm">
+    <h2>Movie Rating Form</h2>
+    <label for="movieTitle">Movie Title:</label><br>
+    <input type="text" id="movieTitle" name="movieTitle" required><br><br>
+
+    <label for="movieYear">Release Year:</label><br>
+    <input type="number" id="movieYear" name="movieYear" max="2026" required><br><br>
+
+    <label for="genre">Genre:</label><br>
+    <select id="genre" name="genre" required>
+        <option value="">Select Genre</option>
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Horror">Horror</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+    </select><br><br>
+
+    <label for="ratingInput">Rating: </label><br>
+    <input type="hidden" id="ratingInput" name="rating" required>
+    <div id="starContainer">
+        <button type="button" class="star" data-value="1">
+            <span class="fa fa-star star-icon"></span>
+        </button>
+        <button type="button" class="star" data-value="2">
+            <span class="fa fa-star star-icon"></span>
+        </button>
+        <button type="button" class="star" data-value="3">
+            <span class="fa fa-star star-icon"></span>
+        </button>
+        <button type="button" class="star" data-value="4">
+            <span class="fa fa-star star-icon"></span>
+        </button>
+        <button type="button" class="star" data-value="5">
+            <span class="fa fa-star star-icon"></span>
+        </button>
+    </div><br><br>
+    </div>
+
+    <button type="submit">Add Movie</button>
+
+    <div id="output"></div>
+</form>
+
+</body>
