@@ -1,9 +1,13 @@
 const output = document.getElementById("output");
 const stars = document.querySelectorAll('.star');
 const ratingInput = document.getElementById('ratingInput');
+const genreInput = document.getElementById('genre')
+const yearInput = document.getElementById('movieYear')
+const titleInput = document.getElementById('movieTitle')
 
 document.getElementById("movieRatingForm").addEventListener("submit", function(e) {
     e.preventDefault();
+
 
     const data = Object.fromEntries(new FormData(this).entries());
 
@@ -17,15 +21,20 @@ document.getElementById("movieRatingForm").addEventListener("submit", function(e
     let html = '<h2>Movie Ratings:</h2><dl>';
 
     movies.forEach(s => {
-
+        if(s.movieTitle !== ''){
         let noOfStars = `<span class="fa fa-star checked"></span>`.repeat(s.rating);
 
-        html += `<dt> ${s.movieTitle} (${s.movieYear}) - ${s.genre}, Rating: ${noOfStars}</dt>`
+        html += `<dt> ${s.movieTitle} (${s.movieYear}) - ${s.genre}, Rating: ${noOfStars} <button type="button" onclick="deleteMovie('${s.movieTitle}')"> Delete</button></dt>`
+        }
     });
 
     html += `</dl>`;
     output.innerHTML = html;
+
+    
 });
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
 

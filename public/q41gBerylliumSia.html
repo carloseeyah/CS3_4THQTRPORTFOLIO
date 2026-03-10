@@ -76,6 +76,23 @@
     }
     </style>
 
+    <script>
+        function deleteMovie(title) {
+        let movies = JSON.parse(localStorage.getItem("movies")) || [];
+        movies = movies.filter(movie => movie.movieTitle !== title);
+        localStorage.setItem("movies", JSON.stringify(movies));
+    
+        alert(`Movie "${title}" deleted successfully!`);
+        document.getElementById("movieRatingForm").dispatchEvent(new Event('submit'));
+
+        for (let i = 0; i < movies.length - 1; i++){
+            if (movies[i].movieTitle === ''){
+                movies = movies.splice(i, 1);
+            }
+        }
+    }
+    </script>
+
 </head>
 
 <body>
