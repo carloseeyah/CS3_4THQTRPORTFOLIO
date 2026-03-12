@@ -76,22 +76,26 @@
     }
     </style>
 
-    <script>
-        function deleteMovie(title) {
-        let movies = JSON.parse(localStorage.getItem("movies")) || [];
-        movies = movies.filter(movie => movie.movieTitle !== title);
-        localStorage.setItem("movies", JSON.stringify(movies));
-    
+<script>
+    function deleteMovie(title) {
+    let movies = JSON.parse(localStorage.getItem("movies")) || [];
+    movies = movies.filter(movie => movie.movieTitle !== title);
+    localStorage.setItem("movies", JSON.stringify(movies));
+
+    if (!confirm(`Are you sure you want to delete the movie "${title}"?`)) {
+        return; // Exit the function if the user cancels the deletion
+    } else {
         alert(`Movie "${title}" deleted successfully!`);
         document.getElementById("movieRatingForm").dispatchEvent(new Event('submit'));
+    }
 
-        for (let i = 0; i < movies.length - 1; i++){
-            if (movies[i].movieTitle === ''){
-                movies = movies.splice(i, 1);
-            }
+    for (let i = 0; i < movies.length - 1; i++){
+        if (movies[i].movieTitle === ''){
+            movies = movies.splice(i, 1);
         }
     }
-    </script>
+}
+</script>
 
 </head>
 
