@@ -65,7 +65,7 @@
 
 - Guided Question: What happens when you scroll the page? Why does the footer behave differently from position relative?
 
-Scrolling the page keeps the footer position fixed with fixed positioning. Comparing to relative positioning, the foot behaves differently as it is positioned relative to the browser window while relative positioning bases it of off the html itself.
+Scrolling the page keeps the footer position fixed with fixed positioning. Comparing to relative positioning, the foot behaves differently as it is positioned relative to the browser window while relative positioning bases it of off its original positioning in the normal flow itself.
 
 ### Step 3 (Absolute):
 
@@ -73,7 +73,7 @@ Scrolling the page keeps the footer position fixed with fixed positioning. Compa
 
 - Guided Question: What is the effect of position: absolute on an element? How is it different from fixed?
 
-Absolute positioning bases the position of an element based on the position of another near element. It is different from fixed as fixed keeps it visible even during scrolling, absolute elements moves along with the page.
+Absolute positioning bases the position of an element based on the position of another near element. It is different from fixed as fixed keeps it visible even during scrolling, while absolute elements move along with the page.
 
 ### Step 4 : (Absolute)
 
@@ -99,7 +99,7 @@ The notice appears on top of the content as its z value is greater than the cont
 - Challenge: 
     * What changes that you have to do on the code that will position .notice box on the top right corner of the .content box? Please write the code on paper as well (both html and css on the part of .notice and .content).
 
-    To position the notice box on the top right corner of the .content box, we have to change the value of left from 400px to 430px to exactly place it on the corner.
+    To position the notice box exactly on the top right corner of the .content box, we have to change the value of left from 400px to 430px to exactly place it on the corner.
 
     * Try to change the position of .content to relative then to fixed. What do you observed each time?
 
@@ -113,7 +113,13 @@ The notice appears on top of the content as its z value is greater than the cont
 
     a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)? 
 
-    Static positioning puts it to its default positioning and prevents the usage of top, left, right, or bottom (position changing characteristics). Absolute places the element to the nearest element and allows document flow. Fixed positioning positions the element relative to the browser window, making it remain in the same position even when the page is scrolled. Lastly, relative positioning bases the element's position based on the document.
+    Static positioning puts it to its default positioning and prevents the usage of offsets. 
+    
+    Absolute places the element to the nearest element and removes it from document flow while moving along with the page. 
+    
+    Fixed positioning positions the element relative to the browser window, making it remain in the same position even when the page is scrolled while removing it from the document flow. 
+    
+    Lastly, relative positioning bases the element's position based on its original position in the normal flow, utilizing offsets.
 
     b. How does absolute positioning depend on its parent element?
 
@@ -124,3 +130,9 @@ The notice appears on top of the content as its z value is greater than the cont
     While both allow elements to remain visible during scrolling, sticky is particularly unique as it can act like relative until it reaches a defined offset, then it sticks in place within its parent container.
 
     d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+
+    I would likely use relative positioning the most as it would give me the most flexible control over the position of important information. 
+    
+    For example, for annotating important information, it is crucial for users to be able to still scroll while it is positioned within the center or main space of the viewport.
+
+    I would also likely use fixed positioning for important functions in the page that must be constantly accessible like menu buttons and a hyperlink to references.
