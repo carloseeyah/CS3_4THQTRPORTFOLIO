@@ -116,6 +116,8 @@ The notice appears on top of the content as its z value is greater than the cont
     Static positioning puts it to its default positioning and prevents the usage of top, left, right, or bottom (position changing characteristics). Absolute places the element to the nearest element and allows document flow. Fixed positioning positions the element relative to the browser window, making it remain in the same position even when the page is scrolled. Lastly, relative positioning bases the element's position based on the document.
 
     b. How does absolute positioning depend on its parent element?
+    
+    Absolute positioning depends on the closest ancestor that has a position. If none exist, it defaults to the document body.
 
     c. How do you differentiate sticky from fixed (you can research on sticky)?
 
